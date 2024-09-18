@@ -1,0 +1,64 @@
+.slider {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  transition: top 0.3s ease;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Adjust for positioning */
+}
+
+.slider.open {
+  top: 0;
+}
+
+/* Positioning the close icon */
+.close-icon {
+  position: absolute; /* Use absolute positioning */
+  top: 15px; /* Adjust top position */
+  right: 20px; /* Adjust right position */
+  cursor: pointer;
+  font-size: 24px; /* Set the size for the close icon */
+  color: inherit; /* Use the inherited color for theme consistency */
+}
+
+/* Light Mode Styles */
+.slider.light {
+  background-color: var(--bg-color-light); /* Light background */
+  color: var(--text-color-light); /* Dark gray text */
+}
+
+/* Dark Mode Styles */
+.slider.dark {
+  background-color: var(--bg-color-dark); /* Dark background */
+  color: var(--text-color-dark); /* White text */
+}
+
+.slider-nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; 
+}
+
+.slider-nav li {
+  margin: 10px 0;
+}
+
+.slider-nav a {
+  font-weight: bold;
+  padding: 10px 12px ;
+  margin: 4px 5px;
+  color: var(--text-color-dark);
+  text-decoration: none; 
+  font-size: 18px;
+}
+
+.slider-nav a:hover {
+  transition: ease-out 0.3s;
+  text-decoration: underline; 
+}
