@@ -2,7 +2,7 @@ import React from 'react';
 import './Slider.css';
 import { FaTimes } from 'react-icons/fa';
 import { useTheme } from '../../storeContext/themeContext';
-
+import { Link } from 'react-router-dom';
 const Slider = ({ isOpen, toggleSlider }) => {
   const { isDarkMode } = useTheme(); // Get the current theme state
 
@@ -13,10 +13,11 @@ const Slider = ({ isOpen, toggleSlider }) => {
       </div>
       <nav className="slider-nav">
         <ul>
-          <li><a href="#option1">Home</a></li>
-          <li><a href="#option2">Projects</a></li>
-          <li><a href="#option3">Blog</a></li>
-          <li><a href="#option3">Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
     </div>

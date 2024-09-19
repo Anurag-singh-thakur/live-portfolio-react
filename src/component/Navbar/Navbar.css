@@ -6,7 +6,7 @@
   padding: 10px 20px;
   background-color: var(--bg-color-dark); /* Use dark mode background by default */
   color: var(--text-color-dark); /* Use dark mode text color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
   position: sticky;
 }
 

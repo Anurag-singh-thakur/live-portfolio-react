@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="navbar-left">
         {/* <FaUserCircle className="profile-icon"  /> */}
         <div >
