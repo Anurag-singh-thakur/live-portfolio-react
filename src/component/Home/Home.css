@@ -66,6 +66,7 @@ h4 {
   font-weight: bold;
   background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
   margin-right: 9px;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -121,8 +122,6 @@ h4 {
       transform: translate(-50%, -100%) scale(0);
   }
 }
-
-/* Fade-in animation for text elements */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.5s forwards;

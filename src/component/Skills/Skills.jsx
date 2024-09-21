@@ -56,11 +56,11 @@ const Skills = () => {
         </div>
       </div>
       <div className="skills-container-bottom" style={{ display: showBottom ? 'block' : 'none' }}>
-        <div class="discord-section">
-          <h2 class="discord-header">Join Our Community on Discord!</h2>
-          <p class="discord-description">Connect, collaborate, and chat with fellow developers!</p>
-          <a href="https://discord.gg/wk9Ceuuf" class="discord-button" target='_blank'>Join Now!</a>
-          <div class="discord-illustration">
+        <div className="discord-section">
+          <h2 className="discord-header">Join Our Community on Discord!</h2>
+          <p className="discord-description">Connect, collaborate, and chat with fellow developers!</p>
+          <a href="https://discord.gg/wk9Ceuuf" className="discord-button" target='_blank'>Join Now!</a>
+          <div className="discord-illustration">
             <img src={discord} alt="Discord Illustration" />
           </div>
         </div>
