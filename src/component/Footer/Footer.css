@@ -21,11 +21,11 @@
     gap: 8px;
   }
   .footer-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   
   .footer-section {
@@ -74,7 +74,12 @@
   .footer-bottom p {
     font-size: 14px;
   }
-  
+  .coding-profiles {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+
   /* Responsive styles */
   @media (max-width: 768px) {
     .footer {
