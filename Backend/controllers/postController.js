@@ -1,5 +1,47 @@
-const Post = require('../models/Post');
+const multer = require('multer');
+const path = require('path');
+const Post = require('../models/post');
+const fs = require('fs');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname))
+  }
+});
 
+const upload = multer({ storage: storage }).single('image');
+
+exports.createPost = async (req, res) => {
+  upload(req, res, async function (err) {
+    if (err instanceof multer.MulterError) {
+      return res.status(400).json({ success: false, error: err.message });
+    } else if (err) {
+      return res.status(400).json({ success: false, error: err.message });
+    }
+
+    try {
+      const { title, content } = req.body;
+      if (!title || !content) {
+        return res.status(400).json({ success: false, error: 'Title and content are required' });
+      }
+
+      const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+
+      const newPost = new Post({
+        title,
+        content,
+        image: imagePath
+      });
+
+      await newPost.save();
+      res.status(201).json({ success: true, data: newPost });
+    } catch (error) {
+      res.status(400).json({ success: false, error: error.message });
+    }
+  });
+};
 exports.getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find().sort({ createdAt: -1 });
@@ -8,17 +50,6 @@ exports.getAllPosts = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
-
-exports.createPost = async (req, res) => {
-  try {
-    const newPost = new Post(req.body);
-    await newPost.save();
-    res.status(201).json({ success: true, data: newPost });
-  } catch (error) {
-    res.status(400).json({ success: false, error: error.message });
-  }
-};
-
 exports.deletePost = async (req, res) => {
   try {
     const post = await Post.findByIdAndDelete(req.params.id);

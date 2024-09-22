@@ -4,6 +4,7 @@ const connectDB = require('./config/database');
 const postRoutes = require('./routes/postRoutes');
 const errorHandler = require('./middleware/errorHandeler');
 const cors = require('cors');
+const path = require('path');
 
 dotenv.config();
 
@@ -11,8 +12,12 @@ connectDB();
 
 const app = express();
 
-app.use(cors());  // Add this line
+app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from the uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/posts', postRoutes);
 
