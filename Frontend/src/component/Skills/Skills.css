@@ -1,0 +1,157 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  gap: 20px;
+  
+}
+.skills{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+.skills-container-top {
+  flex: 0 0 48%; 
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 6px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.skills-container-bottom {
+  flex: 0 0 48%;
+  width: 80%;
+  margin: 0 auto;
+  animation: fadeInUp 1.2s ease-in-out;
+  /* overflow: auto;  */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.skills-img {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  object-fit: contain;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.skills-img img {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.dark .skills-container-top {
+  border-color: white; 
+}
+
+.light .skills-container-top {
+  border-color: black; 
+}
+
+/* discord section*/
+.discord-section {
+  background-color: #7289DA;
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.discord-header {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+  
+}
+
+.discord-description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.discord-button {
+  background-color: #43B581;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.discord-button:hover {
+  background-color: #36a04a;
+  transform: scale(1.05);
+}
+
+.discord-illustration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.9;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.discord-illustration img {
+  width: 200px; 
+  height: auto;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

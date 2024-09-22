@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+/* Base Styles */
+:root {
+  --bg-color-light: #f0f8ff; /* Light background with a hint of blue */
+  --bg-color-dark: rgb(20, 20, 19); /* Dark background (light black) */
+  --text-color-light: #333333; /* Dark gray text for light mode */
+  --text-color-dark: #ffffff; /* White text for dark mode */
+  --accent-color-light: #0f5da6; /* Light blue accent color */
+  --accent-color-dark: #73b1ef; /* Dark blue accent color */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.light-mode a {
+  color: var(--accent-color-light);
+}
+
+body.light-mode header,
+body.light-mode footer {
+  background-color: var(--bg-color-light);
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--accent-color-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode a {
+  color: var(--accent-color-light);
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: var(--bg-color-dark);
+}

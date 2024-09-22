@@ -1,0 +1,62 @@
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--bg-color-dark); /* Use dark mode background by default */
+  color: var(--text-color-dark); /* Use dark mode text color */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
+  position: sticky;
+}
+
+.navbar.left {
+  background-color: var(--bg-color-light); /* Light mode background */
+  color: var(--text-color-light); /* Light mode text color */
+}
+
+.navbar-left, .navbar-right {
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+ 
+}
+
+.profile-icon {
+  height: 44px;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navbar-center {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Add media queries or classes for light/dark mode */
+body.light-mode .navbar {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.light-mode .navbar a {
+  color: var(--accent-color-light);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .navbar a {
+  color: var(--accent-color-dark);
+}
+/*/*dark mode switch
+
